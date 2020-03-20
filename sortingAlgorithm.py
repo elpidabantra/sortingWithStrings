@@ -1,22 +1,10 @@
-
-
-Skip to content
-Using Gmail with screen readers
-
-Conversations
-5.18 GB (34%) of 15 GB used
-Manage
-Terms · Privacy · Program Policies
-Last account activity: 3 hours ago
-Details
-
 import math
 
 # always provide a beforeString and an afterString such as beforeString < afterString
 smallestLetter = '0'
 largestLetter = 'z'
 defaultStep = 1
-middle = "MIDDLE"
+middle = "M"
 
 """
 0,....,9,
@@ -36,6 +24,7 @@ a, ..., z  #74
 """
 
 class InsertSortedStrings:
+
     def __init__(self, beforeString, afterString, defaultStep, middle, elements):
         self.beforeString = beforeString
         self.afterString = afterString
@@ -50,6 +39,7 @@ class InsertSortedStrings:
     # general functions
     def value (self, char):
         return ord (char) - ord (smallestLetter)
+
     def character (self, value):
         return chr (value+ord(smallestLetter))
     def maxDistance (self):
@@ -79,7 +69,7 @@ class InsertSortedStrings:
                 if r == self.m:
                     lis.append(smallestLetter)
                 else:
-                    lis.append(self.character(r))
+                    lis.append(self.character(int(r)))
             for ll in lis:
                 newL = newL + ll
         else:
@@ -117,7 +107,7 @@ class InsertSortedStrings:
                 if r == self.m:
                     lis.append(smallestLetter)
                 else:
-                    lis.append(self.character(r))
+                    lis.append(self.character(int(r)))
             for ll in lis:
                 newL = newL + ll
         else:
@@ -167,7 +157,7 @@ class InsertSortedStrings:
             if r == self.m:
                 lis.append(smallestLetter)
             else:
-                lis.append(self.character(r))
+                lis.append(self.character(int(r)))
         for ll in lis:
             newL = newL + ll
         if dis%2.0 != 0:
@@ -203,7 +193,7 @@ class InsertSortedStrings:
             if r == self.m:
                 lis.append(smallestLetter)
             else:
-                lis.append(self.character(r))
+                lis.append(self.character(int(r)))
         for ll in lis:
             newL = newL + ll
         if dis%2.0 != 0:
@@ -285,27 +275,6 @@ class InsertSortedStrings:
             newItemList.append(newItem)
         return newItemList
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
     def createNew(self):
         if self.beforeString == "":
@@ -349,12 +318,7 @@ class InsertSortedStrings:
                         l = l + 1
                         newItem = self.insertMiddle(second, last)
                         newIList.append(newItem)
-                    return newIList
-
-
-
-
-                
+                    return newIList  
         else:
             if self.afterString == "":
                 if self.elements == 1: # test - case 2
@@ -379,11 +343,9 @@ class InsertSortedStrings:
 
 ##############################################
 
-beforeString = "" #, "AAA", "ZZ", "K", "HBK", "HKKLIOMNO", "12a", "", ""]
-afterString = "BHJ" #, "BHJ", "", "L", "HBKIKAL", "HKKM", "", "[^a",""]
-elements = 23   # number of inserts
+beforeString = "3" #, "AAA", "ZZ", "K", "HBK", "HKKLIOMNO", "12a", "", ""]
+afterString = "" #, "BHJ", "", "L", "HBKIKAL", "HKKM", "", "[^a",""]
+elements = 1   # number of inserts
 
 newItem = InsertSortedStrings(beforeString, afterString, defaultStep, middle, elements).createNew()  # test ("AD", "BA") should return 23
 print(newItem)
-lexorank.txt
-Displaying lexorank.txt.
